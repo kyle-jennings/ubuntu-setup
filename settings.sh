@@ -169,7 +169,13 @@ fi
 
 
 # replace scudcloud icon
+#if [[ !-e ~/Downloads/slack-icon.png ]]; then
+#    wget -q -O ~/Downloads/slack-icon.png https://d13yacurqjgara.cloudfront.net/users/48487/screenshots/1400899/attachments/203337/Slack-flat.png
+#fi
 
-if [[ !-e ~/Downloads/slack-icon.png ]]; then
-    wget -q -O ~/Downloads/slack-icon.png https://d13yacurqjgara.cloudfront.net/users/48487/screenshots/1400899/attachments/203337/Slack-flat.png
+echo "Settings up terminator"
+echo "======================"
+echo " "
+if [[ !-e ~/.config/terminator/config ]]; then
+    cp confs/terminator/config ~/.config/terminator/
 fi
