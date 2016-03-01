@@ -1,0 +1,19 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Alignment",
+		"ApplySyntax",
+		"BracketHighlighter",
+		"ColorPicker",
+		"DocBlockr",
+		"GitGutter",
+		"Package Control",
+		"PackageResourceViewer",
+		"Predawn",
+		"SideBarEnhancements"
+	]
+}

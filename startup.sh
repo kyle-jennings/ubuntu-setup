@@ -1,7 +1,41 @@
-mkdir ~/.config/autostart
+echo "Setting up autostart settings"
+echo "============================="
+echo " "
+
+if [[ ! -d ~/.config/autostart ]]; then
+	mkdir ~/.config/autostart
+fi
+
 rm ~/.config/autostart/*
 
-touch ~/.config/autostart/tlp.desktop && echo 'tlp start' >> ~/.config/autostart/tlp.desktop 
-touch ~/.config/autostart/touchegg.desktop && echo 'touchegg &' >> ~/.config/autostart/touchegg.desktop
-touch ~/.config/autostart/redshift.desktop && echo 'gtk-redshift' >> ~/.config/autostart/redshift.desktop
-touch ~/.config/autostart/indicator-brightness.desktop && echo '/opt/indicator-brightness/indicator-brightness.py' >> ~/.config/autostart/indicator-brightness.desktop
+echo "TLP - power stuff"
+echo " "
+
+tlpStart="~/.config/autostart/tlp.desktop"
+if [[ ! -e ~/.config/autostart/tlp.desktop ]]; then
+	cp confs/autostart/tlp.desktop ~/.config/autostart/
+fi
+
+echo "Redshift"
+echo " "
+
+redshiftStart="~/.config/autostart/redshift-gtk.desktop"
+if [[ ! -e $redshiftStart ]]; then
+	cp confs/autostart/redshift-gtk.desktop ~/.config/autostart/
+fi
+
+echo "Touchegg"
+echo " "
+
+toucheggStart="~/.config/autostart/touchegg.desktop"
+if [[ ! -e ~/.config/autostart/touchegg.desktop ]]; then
+	cp confs/autostart/touchegg.desktop ~/.config/autostart/
+fi
+
+echo "Brightness Indicator"
+echo " "
+
+brightnessStart="~/.config/autostart/indicator-brightness.desktop"
+if [[ ! -e $brightnessStart ]]; then
+	cp confs/autostart/indicator-brightness.desktop ~/.config/autostart/
+fi
