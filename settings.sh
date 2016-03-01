@@ -61,7 +61,7 @@ if [[ ! -d ~/.config/touchegg ]]; then
 	mkdir ~/.config/touchegg
 	sudo chmod -R 777 ~/.config/touchegg
 fi
-cat touchegg.conf >> ~/.config/touchegg/touchegg.conf
+cat confs/touchegg.conf > ~/.config/touchegg/touchegg.conf
 
 
 # set screenoff time - 20 minutes
@@ -165,4 +165,11 @@ echo " "
 
 if [[ ! -e ~/.config/redshift.conf ]]; then
     cp -f confs/redshift.conf ~/.config/
+fi
+
+
+# replace scudcloud icon
+
+if [[ !-e ~/Downloads/slack-icon.png ]]; then
+    wget -q -O ~/Downloads/slack-icon.png https://d13yacurqjgara.cloudfront.net/users/48487/screenshots/1400899/attachments/203337/Slack-flat.png
 fi

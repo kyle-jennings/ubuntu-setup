@@ -1,3 +1,3 @@
-source apt-get.sh
+source packages.sh
 source settings.sh
 source autostart.sh
