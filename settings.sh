@@ -123,8 +123,9 @@ echo "Disabling tap to click on touchpad"
 echo "=================================="
 echo " "
 
-gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click false
-
+testVar="$(gsettings list-recursively | grep -m 1 tap-to-click)"
+schema=$(echo "$testVar" | sed 's/tap-to-click.*//')
+gsettings set $schema tap-to-click false
 
 # turn off tap to click
 echo "Unlock default launcher apps"
