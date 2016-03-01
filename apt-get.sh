@@ -6,13 +6,14 @@ echo " "
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
 
-# add repositories 
+# add repositories
 echo "Adding repos"
 echo "============"
 echo " "
 
+# make this a loop
 sudo add-apt-repository -y ppa:peterlevi/ppa
-sudo add-apt-repository -y ppa:linrunner/tlp  
+sudo add-apt-repository -y ppa:linrunner/tlp
 sudo add-apt-repository -y ppa:noobslab/icons
 sudo add-apt-repository -y ppa:indicator-brightness/ppa
 sudo add-apt-repository -y ppa:atareao/atareao
@@ -35,4 +36,4 @@ echo "Installing packages"
 echo "==================="
 echo " "
 
-sudo apt-get install -y build-essential libxcb-randr0-dev tlp tlp-rdw smartmontools ethtool ultra-flat-icons python-wnck indicator-brightness calendar-indicator my-weather-indicator touchegg terminator sublime-text-installer redshift gtk-redshift unity-tweak-tool gnome-tweak-tool vim git dropbox dconf-tools google-chrome-stable varietys
+sudo apt-get install -y build-essential libxcb-randr0-dev tlp tlp-rdw smartmontools ethtool ultra-flat-icons python-wnck indicator-brightness calendar-indicator my-weather-indicator touchegg terminator sublime-text-installer redshift gtk-redshift unity-tweak-tool gnome-tweak-tool vim git dropbox dconf-tools google-chrome-stable variety

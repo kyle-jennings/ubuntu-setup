@@ -2,7 +2,7 @@
 GenericName=Color temperature adjustment
 Name=Redshift
 Icon=redshift
-Exec=redshift-gtk -l 38.926660:-77.038578
+Exec=redshift-gtk
 Terminal=false
 Categories=Utility;
 X-GNOME-Autostart-enabled=false

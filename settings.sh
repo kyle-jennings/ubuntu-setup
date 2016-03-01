@@ -13,9 +13,15 @@ if [[ ! -e ~/Downloads/flattabulous.zip ]]; then
 	wget -q -O ~/Downloads/flattabulous.zip https://github.com/anmoljagetia/Flatabulous/archive/master.zip
 fi
 
+#unzip theme to them folder
 if [[ ! -e ~/.themes/Flatabulous-master ]]; then
 	unzip -qq ~/Downloads/flattabulous.zip -d ~/.themes
 fi
+
+# I dont like rounded corners
+echo "Death to border-radius"
+echo " "
+sed -i 's/border-radius: 6px 6px 0 0;/border-radius:0;/g' ~/.themes/Flatabulous-master/gtk-3.0/apps/unity.css
 
 # set themes and icons
 echo "Prettying up your desktop - Flatabulous theme and Ultra Flat Icons"
@@ -32,7 +38,10 @@ gsettings set org.gnome.desktop.wm.preferences theme "Flatabulous-master"
 #echo "==================================="
 #echo " "
 
-
+echo "Turning off desktop icons"
+echo "=========================="
+echo " "
+#nemo seems broken on 15.10, so we are only turning off desktop icons
 gsettings set org.gnome.desktop.background show-desktop-icons false
 #xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 #gsettings set org.nemo.desktop show-desktop-icons true
@@ -81,7 +90,7 @@ gsettings set com.canonical.Unity form-factor 'Netbook'
 
 
 # auto hide the unity bar
-echo "Auto Hidding the unity bar"
+echo "Auto Hiding the unity bar"
 echo "=========================="
 echo " "
 
@@ -89,7 +98,7 @@ echo " "
 gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-hide-mode 1
 
 
-# turn off search 
+# turn off search
 echo "Disabling spamming lense scopes"
 echo "==============================="
 echo " "
@@ -105,7 +114,8 @@ echo " "
 
 
 if [[ -d ~/.config/sublime-text-3 ]]; then
-	cp confs/sublime-settings/* ~/.config/sublime-text-3/
+	cp -f confs/sublime-settings/* ~/.config/sublime-text-3/Packages/User
+    wget -q -O  ~/.config/sublime-text-3/Installed\ Packages/Package\ Control.sublime-package https://packagecontrol.io/Package%20Control.sublime-package
 fi
 
 # turn off tap to click
@@ -122,4 +132,37 @@ echo "============================="
 echo " "
 
 gsettings set com.canonical.Unity.Launcher favorites "['application://ubuntu-software-center.desktop', 'application://unity-control-center.desktop', 'unity://running-apps', 'application://google-chrome.desktop', 'application://terminator.desktop', 'application://sublime-text.desktop', 'unity://expo-icon', 'unity://devices']"
+
+# turn off tap to click
+echo "Shrink unity bar"
+echo "================"
+echo " "
 dconf write /org/compiz/profiles/unity/plugins/unityshell/icon-size 32
+
+# setup git
+echo "Settings up Git"
+echo "==============="
+echo " "
+
+git config --global core.editor "vim"
+
+
+# setup variety
+echo "Settings up Variety"
+echo "==================="
+echo " "
+
+
+if [[ -d ~/.config/variety ]]; then
+    cp -f confs/variety.conf ~/.config/variety/
+fi
+
+# setup redshift
+echo "Settings up redshift"
+echo "==================="
+echo " "
+
+
+if [[ ! -e ~/.config/redshift.conf ]]; then
+    cp -f confs/redshift.conf ~/.config/
+fi
