@@ -23,6 +23,7 @@ sudo add-apt-repository -y ppa:gnome-terminator
 sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
 sudo add-apt-repository -y "deb http://linux.dropbox.com/ubuntu $(lsb_release -sc) main"
 sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 
 
@@ -31,11 +32,11 @@ echo "Updating apt-get"
 echo "================"
 echo " "
 
-sudo apt-get update
+sudo apt-get update && sudo apt-get upgrade
 
 # install packages
 echo "Installing packages"
 echo "==================="
 echo " "
 
-sudo apt-get install -y build-essential libxcb-randr0-dev tlp tlp-rdw smartmontools ethtool ultra-flat-icons python-wnck indicator-brightness calendar-indicator my-weather-indicator touchegg terminator sublime-text-installer redshift gtk-redshift unity-tweak-tool gnome-tweak-tool vim git dropbox dconf-tools google-chrome-stable variety libgcrypt11-dev spotify-client scudcloud vlc ubuntu-restricted-extras openjdk-8-jdk filezilla geoclue-hostip
+sudo apt-get install -y build-essential libxcb-randr0-dev tlp tlp-rdw smartmontools ethtool ultra-flat-icons python-wnck indicator-brightness calendar-indicator my-weather-indicator touchegg terminator sublime-text-installer redshift gtk-redshift unity-tweak-tool gnome-tweak-tool vim git dropbox dconf-tools google-chrome-stable variety libgcrypt11-dev spotify-client scudcloud vlc ubuntu-restricted-extras openjdk-8-jdk filezilla geoclue-hostip virtualbox tasksel lamp-server vagrant
