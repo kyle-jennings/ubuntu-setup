@@ -1,41 +1,64 @@
-echo "Setting up autostart settings"
-echo "============================="
-echo " "
+create_autostart_folder(){
 
-if [[ ! -d ~/.config/autostart ]]; then
-	mkdir ~/.config/autostart
-fi
+    echo "Setting up autostart settings"
+    echo "============================="
+    echo ""
 
-rm ~/.config/autostart/*
+    if [[ ! -d ~/.config/autostart ]]; then
+    	mkdir ~/.config/autostart
+    fi
 
-echo "TLP - power stuff"
-echo " "
+    rm ~/.config/autostart/*
+}
 
-tlpStart="~/.config/autostart/tlp.desktop"
-if [[ ! -e ~/.config/autostart/tlp.desktop ]]; then
-	cp confs/autostart/tlp.desktop ~/.config/autostart/
-fi
 
-echo "Redshift"
-echo " "
+autostart_tlp(){
 
-redshiftStart="~/.config/autostart/redshift-gtk.desktop"
-if [[ ! -e $redshiftStart ]]; then
-	cp confs/autostart/redshift-gtk.desktop ~/.config/autostart/
-fi
+    echo "TLP - power stuff"
+    echo ""
 
-echo "Touchegg"
-echo " "
+    tlpStart="~/.config/autostart/tlp.desktop"
+    if [[ ! -e ~/.config/autostart/tlp.desktop ]]; then
+    	cp confs/autostart/tlp.desktop ~/.config/autostart/
+    fi
+}
 
-toucheggStart="~/.config/autostart/touchegg.desktop"
-if [[ ! -e ~/.config/autostart/touchegg.desktop ]]; then
-	cp confs/autostart/touchegg.desktop ~/.config/autostart/
-fi
 
-echo "Brightness Indicator"
-echo " "
+autostart_redshift(){
 
-brightnessStart="~/.config/autostart/indicator-brightness.desktop"
-if [[ ! -e $brightnessStart ]]; then
-	cp confs/autostart/indicator-brightness.desktop ~/.config/autostart/
-fi
+    echo "Redshift"
+    echo ""
+
+    redshiftStart="~/.config/autostart/redshift-gtk.desktop"
+    if [[ ! -e $redshiftStart ]]; then
+    	cp confs/autostart/redshift-gtk.desktop ~/.config/autostart/
+    fi
+}
+
+autostart_touchegg(){
+    echo "Touchegg"
+    echo ""
+
+    toucheggStart="~/.config/autostart/touchegg.desktop"
+    if [[ ! -e ~/.config/autostart/touchegg.desktop ]]; then
+    	cp confs/autostart/touchegg.desktop ~/.config/autostart/
+    fi
+
+}
+
+autostart_brightness(){
+
+    echo "Brightness Indicator"
+    echo ""
+
+    brightnessStart="~/.config/autostart/indicator-brightness.desktop"
+    if [[ ! -e $brightnessStart ]]; then
+    	cp confs/autostart/indicator-brightness.desktop ~/.config/autostart/
+    fi
+}
+
+create_autostart_folder
+autostart_tlp
+autostart_redshift
+autostart_touchegg
+autostart_brightness
