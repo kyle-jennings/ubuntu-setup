@@ -1,4 +1,10 @@
 [global_config]
+  scroll_tabbar = True
+  title_inactive_bg_color = "#2d2d2d"
+  title_inactive_fg_color = "#797979"
+  title_transmit_bg_color = "#2d2d2d"
+  title_transmit_fg_color = "#e18500"
+  window_state = maximise
 [keybindings]
 [layouts]
   [[default]]
