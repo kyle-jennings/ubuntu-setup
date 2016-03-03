@@ -6,59 +6,29 @@ create_autostart_folder(){
 
     if [[ ! -d ~/.config/autostart ]]; then
     	mkdir ~/.config/autostart
-    fi
-
-    rm ~/.config/autostart/*
-}
-
-
-autostart_tlp(){
-
-    echo "TLP - power stuff"
-    echo ""
-
-    tlpStart="~/.config/autostart/tlp.desktop"
-    if [[ ! -e ~/.config/autostart/tlp.desktop ]]; then
-    	cp confs/autostart/tlp.desktop ~/.config/autostart/
-    fi
-}
-
-
-autostart_redshift(){
-
-    echo "Redshift"
-    echo ""
-
-    redshiftStart="~/.config/autostart/redshift-gtk.desktop"
-    if [[ ! -e $redshiftStart ]]; then
-    	cp confs/autostart/redshift-gtk.desktop ~/.config/autostart/
-    fi
-}
-
-autostart_touchegg(){
-    echo "Touchegg"
-    echo ""
-
-    toucheggStart="~/.config/autostart/touchegg.desktop"
-    if [[ ! -e ~/.config/autostart/touchegg.desktop ]]; then
-    	cp confs/autostart/touchegg.desktop ~/.config/autostart/
+    else
+        rm ~/.config/autostart/*
     fi
 
 }
 
-autostart_brightness(){
 
-    echo "Brightness Indicator"
-    echo ""
+add_autostart_confs(){
 
-    brightnessStart="~/.config/autostart/indicator-brightness.desktop"
-    if [[ ! -e $brightnessStart ]]; then
-    	cp confs/autostart/indicator-brightness.desktop ~/.config/autostart/
-    fi
+    apps="tlp redshift-gtk indicator-brightness touchegg dropbox variety"
+    for i in $apps
+    do
+        echo "Autostarting $i"
+        echo ""
+
+        autoStartApp="~/.config/autostart/$i.desktop"
+        if [[ ! -e ~/.config/autostart/${i}.desktop ]]; then
+            cp confs/autostart/${i}.desktop ~/.config/autostart/
+        fi
+    done
 }
 
+
+# not need to init here, not enough going on
 create_autostart_folder
-autostart_tlp
-autostart_redshift
-autostart_touchegg
-autostart_brightness
+add_autostart_confs

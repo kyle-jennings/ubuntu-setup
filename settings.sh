@@ -10,11 +10,6 @@ theme_conf(){
     	mkdir ~/.themes
     fi
 
-    # get themes
-    if [[ ! -e ~/Downloads/flattabulous.zip ]]; then
-    	wget -q -O ~/Downloads/flattabulous.zip https://github.com/anmoljagetia/Flatabulous/archive/master.zip
-    fi
-
     #unzip theme to them folder
     if [[ ! -e ~/.themes/Flatabulous-master ]]; then
     	unzip -qq ~/Downloads/flattabulous.zip -d ~/.themes
@@ -265,16 +260,39 @@ setup_ssh_key(){
 }
 
 
-theme_conf
-touchegg_conf
-desktop_conf
-lense_conf
-sublime_conf
-tap_to_click
-launcher_conf
-unity_conf
-git_conf
-variety_conf
-redshift_conf
-teminator_conf
-setup_ssh_key
+setup_mysql(){
+
+    echo "Set mysql user and root"
+    echo "======================="
+    echo ""
+
+    echo mysql-server mysql-server/root_password password "root" | debconf-set-selections
+    echo mysql-server mysql-server/root_password_again password "root" | debconf-set-selections
+}
+
+
+
+init(){
+
+    echo "======================"
+    echo "| Configuring Ubuntu |"
+    echo "======================"
+
+    theme_conf
+    touchegg_conf
+    desktop_conf
+    lense_conf
+    sublime_conf
+    tap_to_click
+    launcher_conf
+    unity_conf
+    git_conf
+    variety_conf
+    redshift_conf
+    teminator_conf
+    setup_ssh_key
+    setup_mysql
+}
+
+# start your engines
+init
