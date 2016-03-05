@@ -292,7 +292,7 @@ init(){
     redshift_conf
     teminator_conf
     setup_ssh_key
-    setup_mysql
+    #setup_mysql
 }
 
 # start your engines
