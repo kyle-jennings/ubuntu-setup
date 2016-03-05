@@ -86,6 +86,7 @@ init(){
     update_and_upgrade
     clean_cache
     vagrant_add_ons
+    get_flatabulous_theme
 }
 
 #start your engines
