@@ -8,7 +8,7 @@ get_keys(){
     sudo apt-key adv --keyserver pgp.mit.edu --recv-keys 5044912E
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
     wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-
+}
 
 
 
