@@ -25,10 +25,11 @@ theme_conf(){
     echo "=================================================================="
     echo " "
 
-
-    gsettings set org.gnome.desktop.interface gtk-theme "Flatabulous-master"
+    if [[ -e ~/Downloads/flattabulous.zip ]]; then
+        gsettings set org.gnome.desktop.interface gtk-theme "Flatabulous-master"
+        gsettings set org.gnome.desktop.wm.preferences theme "Flatabulous-master"
+    fi
     gsettings set org.gnome.desktop.interface icon-theme "Ultra-Flat"
-    gsettings set org.gnome.desktop.wm.preferences theme "Flatabulous-master"
 
 }
 
