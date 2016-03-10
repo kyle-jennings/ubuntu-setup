@@ -50,7 +50,7 @@ update_and_upgrade(){
     echo "==================="
     echo " "
 
-    sudo apt-get install -y build-essential libxcb-randr0-dev tlp tlp-rdw smartmontools ethtool ultra-flat-icons python-wnck indicator-brightness calendar-indicator my-weather-indicator touchegg terminator sublime-text-installer redshift gtk-redshift unity-tweak-tool gnome-tweak-tool vim git dropbox dconf-tools variety libgcrypt11-dev spotify-client scudcloud vlc ubuntu-restricted-extras filezilla geoclue-hostip virtualbox tasksel zlib1g-dev vagrant google-chrome-stable
+    sudo apt-get install -y build-essential libxcb-randr0-dev tlp tlp-rdw smartmontools ethtool ultra-flat-icons python-wnck indicator-brightness calendar-indicator my-weather-indicator touchegg terminator sublime-text-installer redshift gtk-redshift unity-tweak-tool gnome-tweak-tool vim git dropbox dconf-tools variety libgcrypt11-dev spotify-client scudcloud vlc ubuntu-restricted-extras filezilla geoclue-hostip virtualbox tasksel zlib1g-dev vagrant google-chrome-stable unrar comix
 
 }
 
