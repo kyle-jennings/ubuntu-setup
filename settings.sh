@@ -129,7 +129,7 @@ unity_conf(){
     echo "=========================="
     echo " "
 
-    gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-hide-mode 1
+    #gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-hide-mode 1
 
 
     # set dash lense to full screen
