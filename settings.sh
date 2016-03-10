@@ -198,6 +198,20 @@ redshift_conf(){
 
 
 
+comix_conf(){
+
+    # setup redshift
+    echo "Settings up comix"
+    echo "==================="
+    echo " "
+
+
+    if [[ ! -e ~/.config/preferences.pickle ]]; then
+        cp -f confs/preferences.pickle ~/.config/comix/
+    fi
+}
+
+
 # replace scudcloud icon
 #if [[ !-e ~/Downloads/slack-icon.png ]]; then
 #    wget -q -O ~/Downloads/slack-icon.png https://d13yacurqjgara.cloudfront.net/users/48487/screenshots/1400899/attachments/203337/Slack-flat.png
@@ -224,6 +238,16 @@ setup_mysql(){
 }
 
 
+setup_node(){
+    if [[ -e /usr/bin/nodejs ]]; then
+        sudo ln -s /usr/bin/nodejs /usr/bin/node
+    fi
+}
+
+
+gulp_fixes(){
+    echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+}
 
 init(){
 
@@ -244,6 +268,8 @@ init(){
     redshift_conf
     teminator_conf
     setup_ssh_key
+    setup_node
+    gulp_fixes
     #setup_mysql
 }
 
