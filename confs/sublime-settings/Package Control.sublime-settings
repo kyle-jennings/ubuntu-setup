@@ -8,12 +8,22 @@
 		"Alignment",
 		"ApplySyntax",
 		"BracketHighlighter",
+		"Color Highlighter",
+		"ColorHelper",
 		"ColorPicker",
 		"DocBlockr",
 		"GitGutter",
+		"JSHint",
 		"Package Control",
 		"PackageResourceViewer",
 		"Predawn",
-		"SideBarEnhancements"
+		"SCSS",
+		"SideBarEnhancements",
+		"sublimelint",
+		"SublimeLinter",
+		"SublimeLinter-contrib-scss-lint",
+		"SublimeLinter-jshint",
+		"SublimeLinter-php",
+		"WordPress Developer Resources"
 	]
 }
