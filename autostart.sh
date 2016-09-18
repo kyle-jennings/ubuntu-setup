@@ -15,7 +15,7 @@ create_autostart_folder(){
 
 add_autostart_confs(){
 
-    apps="tlp redshift-gtk indicator-brightness touchegg dropbox variety"
+    apps="tlp redshift-gtk indicator-brightness dropbox variety"
     for i in $apps
     do
         echo "Autostarting $i"
