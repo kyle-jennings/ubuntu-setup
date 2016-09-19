@@ -34,21 +34,6 @@ theme_conf(){
 }
 
 
-touchegg_conf(){
-    # touchegg stuff
-    echo "Configuring touchegg"
-    echo "===================="
-    echo " "
-
-
-    if [[ ! -d ~/.config/touchegg ]]; then
-    	mkdir ~/.config/touchegg
-    	sudo chmod -R 777 ~/.config/touchegg
-    fi
-    cat confs/touchegg.conf > ~/.config/touchegg/touchegg.conf
-
-}
-
 desktop_conf(){
 
     # set screenoff time - 20 minutes
@@ -256,7 +241,6 @@ init(){
     echo "======================"
 
     theme_conf
-    touchegg_conf
     desktop_conf
     lense_conf
     sublime_conf
