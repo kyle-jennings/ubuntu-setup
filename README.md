@@ -24,6 +24,12 @@ Here is my list of essential apps and configs use for every fresh install of ubu
 
 ## Packages
 
+
+### Desktop Appearance
+* [Flatabulous Theme](https://github.com/anmoljagetia/Flatabulous#screenshots) - Pretty, minimal, dark theme
+* [Ultraflat Icons](http://www.noobslab.com/2015/01/make-linux-more-elegant-with-ultra-flat.html) - Slick, flat icons which compliment Flatabulous
+
+
 ### Package dependencies
 * build-essential
 * libxcb-randr0-dev
@@ -72,11 +78,6 @@ Here is my list of essential apps and configs use for every fresh install of ubu
 * ubuntu-restricted-extras - (mp3 playback and decoding, support for various formats, fonts, java, flash plugin, lame, dvd playback)
 * [steam](store.steampowered.com)
 * [comix](http://comix.sourceforge.net/) - Comic book reader
-
-
-### Desktop Appearance
-* Flatabulous Theme - Pretty, minimal, dark theme
-* Ultraflat Icons - Slick, flat icons which compliment Flatabulous
 
 
 
