@@ -251,9 +251,9 @@ init(){
     variety_conf
     redshift_conf
     teminator_conf
-    setup_ssh_key
     setup_node
     gulp_fixes
+    #setup_ssh_key
     #setup_mysql
 }
 
