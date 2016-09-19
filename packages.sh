@@ -31,7 +31,8 @@ adding_repos(){
     sudo add-apt-repository -y ppa:webupd8team/atom
     sudo add-apt-repository -y "deb http://linux.dropbox.com/ubuntu $(lsb_release -sc) main"
 
-    sudo echo deb http://download.virtualbox.org/virtualbox/debian trusty contrib | sudo tee /etc/apt/sources.list.d/virtualbox.list
+    # will fix and re-add
+    #sudo echo deb http://download.virtualbox.org/virtualbox/debian trusty contrib | sudo tee /etc/apt/sources.list.d/virtualbox.list
     sudo echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
     sudo echo deb http://dl.google.com/linux/chrome/deb/ stable main | sudo tee /etc/apt/sources.list.d/google.list
 
@@ -155,11 +156,11 @@ init(){
     clean_cache
     vagrant_add_ons
     get_flatabulous_theme
-    setup_npm
-    get_gulp
-    get_bower
     install_docker
-    install_dropbox
+    #setup_npm
+    #get_gulp
+    #get_bower
+    #install_dropbox
 }
 
 #start your engines
