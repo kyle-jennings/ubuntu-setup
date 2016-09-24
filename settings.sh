@@ -143,6 +143,16 @@ unity_conf(){
     #gsettings set org.gnome.desktop.background show-desktop-icons true
     #xdg-mime default nautilus.desktop inode/directory application/x-gnome-saved-search
 
+    echo "Click Unity Icon to Minimize"
+    echo "============================"
+    echo " "
+    gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-minimize-window true
+    
+    echo "Move Unity Bar to bottom of screen"
+    echo "=================================="
+    echo " "
+    gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+
 }
 
 git_conf(){
